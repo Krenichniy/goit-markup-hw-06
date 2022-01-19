@@ -699,6 +699,7 @@ hover color parent */
   left: 50%;
   min-width: 528px;
   min-height: 581px;
+  padding: 40px;
   transform: translate(-50%, -50%) scale(1) rotate(0);
   transition: transform 250ms;
 
@@ -729,4 +730,24 @@ hover color parent */
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+}
+
+/* Форма */
+.form-title {
+  color: var(--header-text-color);
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.form-name {
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+.form-text {
+  width: 100%;
+  margin-bottom: 10px;
 }
