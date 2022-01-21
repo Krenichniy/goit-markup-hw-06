@@ -725,6 +725,7 @@ hover color parent */
   border-radius: 50%;
   cursor: pointer;
   outline: none;
+  transition: color var(--transition-function);
 }
 
 .close-icon {
@@ -759,20 +760,21 @@ hover color parent */
   line-height: 1.15;
   text-align: center;
 }
+
 .form-item {
   margin-bottom: 10px;
   position: relative;
 }
 
-.input-container:hover .form-text,
-.input-container:focus .form-text,
+.form-text:hover,
+.form-text:focus,
 .form-area:hover,
 .form-area:focus {
-  border: 1px solid var(--hover-text-color);
+  border-color: var(--hover-text-color);
 }
 
-.form-item:hover .form-icon,
-.form-item:focus .form-icon {
+.form-text:hover + .form-icon,
+.form-text:focus + .form-icon {
   fill: var(--hover-text-color);
 }
 
@@ -785,6 +787,7 @@ hover color parent */
   height: 18px;
 
   fill: var(--header-text-color);
+  transition: fill var(--transition-function);
 }
 
 .form-name {
@@ -804,6 +807,7 @@ hover color parent */
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: none;
+  transition: border-color var(--transition-function);
 }
 
 .form-area {
@@ -837,15 +841,41 @@ hover color parent */
   margin-left: 5px;
 }
 
-.form-check {
+.form-check::after {
+  content: '';
   width: 16px;
   height: 15px;
-  margin-right: 8px;
+  border: 2px solid var(--header-text-color);
 }
 
 .form-agreement {
+  display: flex;
   font-size: 14px;
   line-height: 1.71;
+}
+
+.form-agreement span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--header-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-icon {
+  fill: transparent;
+}
+
+.form-check:checked + .form-agreement span {
+  border: none;
+  background-color: var(--hover-text-color);
+}
+
+.form-check:checked + .form-agreement .check-icon {
+  fill: var(--primary-white-color);
 }
 
 .form-btn {
